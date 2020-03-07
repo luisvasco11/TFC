@@ -9,7 +9,12 @@ import { Router } from '@angular/router'
   })
 
 export class RegistroUsuarioComponent {
-  user = {}
+  user = {
+
+    email:'',
+    password:''
+
+  }
     constructor(private authService: LoginService,
       private router: Router) {}
 
