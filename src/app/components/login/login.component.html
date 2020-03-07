@@ -1,7 +1,7 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">
-            <form class="login100-form validate-form">
+            <form class="login100-form validate-form"  [formGroup]="loginForm" (submit)="signIn()">
                 <span class="login100-form-title p-b-26">
 						TFC 
 					</span>
@@ -10,41 +10,26 @@
                 </span>
 
                 <div  class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
-                    <input [(ngModel)]="usario.username" placeholder="Usuario" name="username" class="input100" type="text">
+                    
+                    <input formControlName="username" name="username"  [(ngModel)]="user.email" placeholder="Usuario" type="text" class="form-control">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div  class="wrap-input100 validate-input" data-validate="Enter password">
                     <span class="btn-show-pass">
-						</span>
-                    <input class="input100" [(ngModel)]="usario.password" placeholder="Password" name="password" type="password" [disabled]="clienteInvitado">
+                        </span>
+                        
+                        <input formControlName="password" placeholder="Contraseña" [(ngModel)]="user.password" name="password" type="password" class="form-control">
                     <span class="focus-input100"></span>
                 </div>
 
               
               
-                <div class="container-login100-form-btn">
-                    <div class="wrap-login100-form-btn">
-                        <div class="login100-form-bgbtn"></div>
-                        
-                        <button (click)="login()" class="login100-form-btn">
-                            
-                            Ingresar
-                        </button>
-                    </div>
-
-                </div>
-                <div class="container-login100-form-btn">
-                    <div class="wrap-login100-form-btn">
-                        <div class="login100-form-bgbtn"></div>
-                        
-                        <button (click)="login()" class="login100-form-btn">
-                            
-                            Registrar
-                        </button>
-                    </div>
-
-                </div>
+                <button [disabled]="!loginForm.valid" *ngIf="!ingresando" type="submit" class="btn btn-primary btn-sm"><strong>Ingresar</strong></button>
+                <br>
+                <br>                   
+                <button  type="submit" class="btn btn-primary btn-sm"><strong>Registrar</strong></button>
+                <button disabled="true" *ngIf="ingresando" type="button" class="btn btn-primary btn-sm"><strong>Ingresando . . .</strong></button>
             </form>
         </div>
     </div>

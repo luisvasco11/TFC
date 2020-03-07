@@ -17,8 +17,13 @@ import {
     MatChipsModule,
     MatTooltipModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSnackBarModule
 } from '@angular/material';
+
+
+
+
 @NgModule({
   imports: [
     MatButtonModule,
@@ -27,6 +32,7 @@ import {
    MatBadgeModule,
    MatSidenavModule,
    MatListModule,
+   MatSnackBarModule,
    MatGridListModule,
    MatFormFieldModule,
    MatInputModule,
@@ -51,6 +57,7 @@ import {
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
+    MatSnackBarModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatChipsModule,
