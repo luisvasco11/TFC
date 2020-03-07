@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit{
 
     ngOnInit() {
         this.loginForm = new FormGroup({
-            'username': new FormControl('', [ Validators.minLength(1), Validators.required ]),
+            'email': new FormControl('', [ Validators.minLength(1), Validators.required ]),
             'password': new FormControl('',[Validators.minLength(1), Validators.required])
         })
     }
@@ -57,8 +57,8 @@ export class LoginComponent implements OnInit{
 
 
     signIn() {
-        console.log(this.user)
-        this._loginService.signInUser(this.user)
+        console.log(this.loginForm.value)
+        this._loginService.signInUser(this.loginForm.value)
           .subscribe(
             res => {
               console.log(res);

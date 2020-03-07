@@ -70,7 +70,7 @@ import { Router } from '@angular/router'
     }
 
 
- private URL = 'http://localhost:4000/api';
+ private URL = 'https://tfc-ing-soft-backend.herokuapp.com/api';
   
 
   signUpUser(user) {
