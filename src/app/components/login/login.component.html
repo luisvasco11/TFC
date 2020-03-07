@@ -23,12 +23,18 @@
                 </div>
 
               
-              
+              <div class="text-center">
                 <button [disabled]="!loginForm.valid" *ngIf="!ingresando" type="submit" class="btn btn-primary btn-sm"><strong>Ingresar</strong></button>
                 <br>
                 <br>                   
-                <button  type="submit" class="btn btn-primary btn-sm"><strong>Registrar</strong></button>
+                
                 <button disabled="true" *ngIf="ingresando" type="button" class="btn btn-primary btn-sm"><strong>Ingresando . . .</strong></button>
+                <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/registro_usuario']" ><strong>Registrar</strong></button>
+            </div>
+
+
+                
+
             </form>
         </div>
     </div>

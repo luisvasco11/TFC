@@ -1,0 +1,211 @@
+<div class="content">
+    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">TFC</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    
+      
+    </ul>
+
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  <button type="button" class="btn btn-danger" [routerLink]="['/login']" routerLinkActive="router-link-active" >Salir</button>
+  </div>
+</nav>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" src="https://image.freepik.com/vector-gratis/concepto-universidad-diseno-plano_23-2148184171.jpg" alt="Card image cap">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Definición</h5>
+                      <p class="card-text">Definición del proyecto</p>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#definicion">Ingresar</button>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="col-md-3">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" src="https://image.freepik.com/vector-gratis/concepto-universidad-diseno-plano_23-2148184171.jpg" alt="Card image cap">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Justificacion</h5>
+                      <p class="card-text">Justificación del Proyecto</p>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#justificacion">
+                        Ingresar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                            
+      
+                    <div class="col-md-3">
+                        <div class="card" style="width: 20rem;">
+                            <img class="card-img-top" src="https://image.freepik.com/vector-gratis/concepto-universidad-diseno-plano_23-2148184171.jpg" alt="Card image cap">
+                            <div class="card-body text-center">
+                              <h5 class="card-title">Ayudas</h5>
+                              <p class="card-text">Ayudas del proyecto</p>
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ayudas">
+                                Ingresar
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal1 -->
+<div class="modal fade bd-example-modal-lg" id="justificacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Justificación</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text"  for="inputGroupSelect01">Proyectos</label>
+                </div>
+                <select [(ngModel)]="justificacion.proyecto" name="proyecto" class="custom-select" id="inputGroupSelect01">
+                  <option selected>Seleccioné su proyecto </option>
+                  <option value="ucn">TFC para UCN</option>
+                  <option value="mobile">TFC Mobile</option>
+                  <option value="maestria">TFC Maestria</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Ingrese la justificación</span>
+                    </div>
+                    <textarea class="form-control"  [(ngModel)]="justificacion.justificacion" name="justificacion" aria-label="With textarea"></textarea>
+                  </div>
+              </div>
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="savejustificacion()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- Modal2 -->
+<div class="modal fade bd-example-modal-lg" id="definicion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Definición</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">Nombre del proyecto</span>
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="definicion.proyecto" name="proyecto" placeholder="Nombre del proyecto" aria-label="proyecto" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Ingrese la definición</span>
+                    </div>
+                    <textarea class="form-control" [(ngModel)]="definicion.definicion" name="definicion" aria-label="With textarea"></textarea>
+                  </div>
+              </div>
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="savedefinicion()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+   <!-- Modal2 -->
+<div class="modal fade bd-example-modal-lg" id="ayudas" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Ayudas</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <iframe width="860" height="315" src="https://www.youtube.com/embed/wKh3U5tIq70" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <div class="carousel-item">
+                    <iframe width="860" height="315" src="https://www.youtube.com/embed/4-mjJIpkcJc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <div class="carousel-item">
+                    <iframe width="860" height="315" src="https://www.youtube.com/embed/-xqRv8pPydU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+ 

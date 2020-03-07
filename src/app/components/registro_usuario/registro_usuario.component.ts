@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {LoginService  } from '../../services/login.service'
+import { Router } from '@angular/router'
 
 @Component({
     selector: 'app-registro-usuario',
@@ -7,9 +9,21 @@ import { Component } from '@angular/core';
   })
 
 export class RegistroUsuarioComponent {
+  user = {}
+    constructor(private authService: LoginService,
+      private router: Router) {}
 
-    constructor() {}
-
+    signUp() {
+      this.authService.signUpUser(this.user)
+        .subscribe(
+          res => {
+            console.log(res);
+            localStorage.setItem('token', res.token);
+            this.router.navigate(['/dashboard']);
+          },
+          err => console.log(err)
+        )
+    }
 
 
 
